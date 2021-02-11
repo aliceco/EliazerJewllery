@@ -1,63 +1,245 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: "Roboto", sans-serif;
 }
 
 header {
-  background-color: #efd3d7;
   display: flex;
   justify-content: space-between;
-  padding: 3vw;
+  align-items: center;
+}
+
+header h1,
+a,
+button {
+  font-family: "Times New Roman", Times, serif;
+  text-decoration: none;
 }
 
 footer {
-  background-color: #8e9aaf;
+  background-color: #cbc0d3;
   text-align: center;
-  padding: 4vw;
 }
 
+.sidepanel {
+  height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #ae9ab3e5;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 6vw;
+}
+
+.sidepanel a {
+  padding: 1rem 0 1rem 3rem;
+  text-decoration: none;
+  font-size: 1.3rem;
+  font-family: "Roboto", sans-serif;
+  color: black;
+  letter-spacing: 0.1vw;
+  display: block;
+  transition: 0.3s;
+}
+
+.sidepanel .closebtn {
+  position: absolute;
+  top: 2vw;
+  right: 2vw;
+  font-size: 1.4rem;
+  margin-left: 50px;
+}
+
+/* where the products are shown */
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.products {
+  max-width: 30vw;
+  padding: 2vw;
+  letter-spacing: 0.1vw;
+}
+
+/* costumize the add to cart button */
+.addCart-btn {
+  text-decoration: none;
+  border: none;
+  background-color: #cbc0d3;
+  border-radius: 0.6vw;
+  cursor: pointer;
+}
+
+.addCart-btn:hover {
+  background-color: #e1dbe6;
+}
+
+.menuButton {
+  text-decoration: none;
+  border: none;
+}
+
+#title {
+  text-align: center;
+  border-style: solid;
+  border-color: #cbc0d3;
+}
+
+#title p {
+  font-style: italic;
+}
+
+/* Mobile */
 @media (max-width: 700px) {
-  #title {
-    margin: 4vw;
-    padding: 4vw;
-    text-align: center;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .products {
-    max-width: 30vw;
-    padding: 3vw;
+  header,
+  footer {
+    padding: 6vw;
   }
 
-  .products h3,
-  p,
+  header h1 {
+    font-size: 2.6rem;
+  }
+
+  .menuButton {
+    font-size: 1.2rem;
+    background-color: #cbc0d3;
+  }
+
+  .sidepanel a {
+    padding: 2.5rem 0rem 1rem 2rem;
+  }
+
+  .sidepanel .closebtn {
+    position: absolute;
+    top: 1vw;
+    right: 10vw;
+    font-size: 1.4rem;
+    margin-left: 50px;
+  }
+
+  .products h4 {
+    margin: 2vw 0vw 0vw 2vw;
+  }
+
+  .products p {
+    margin: 0vw 0vw 2vw 2vw;
+  }
+
+  .description {
+    display: none;
+  }
+
+  .addCart-btn {
+    margin: 2vw 0vw 0vw 2vw;
+    padding: 2vw;
+  }
+
+  #menu-desktop {
+    display: none;
+  }
+
+  #mobile-cart {
+    font-size: 1.8rem;
+  }
+
+  #menu-mobile {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 0;
+    margin-bottom: 6vh;
+    padding: 4vw;
+    font-size: 1.2rem;
+    background-color: #cbc0d3;
+  }
+
+  #menu-mobile a,
   button {
-    margin: 2vw;
+    color: #43156e;
+  }
+
+  #title {
+    margin: 4vw 10vw 4vw 10vw;
+    padding: 6vw;
+    text-align: center;
+    letter-spacing: 0.8vw;
+    line-height: 8vw;
+    border-style: solid;
+    border-color: #cbc0d3;
   }
 }
 
 @media (min-width: 701px) {
-  #title {
-    margin-top: 2vh;
-    padding: 2vw;
-    text-align: center;
-  }
-  .container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-  .products {
-    max-width: 30vw;
+  header {
     padding: 3vw;
   }
 
-  .products h3,
+  header h1 {
+    padding-left: 4vw;
+    font-size: 3.5vw;
+  }
+
+  footer {
+    padding: 4vw;
+  }
+
+  .menuButton:hover {
+    color: #cbc0d3;
+  }
+
+  .container {
+    margin: 0 5vw 2vw 5vw;
+  }
+
+  .products h4,
   p,
   button {
-    margin: 2vw;
+    margin-top: 1vw;
+  }
+
+  .product-info {
+    display: grid;
+    grid-template-columns: 16vw;
+    grid-template-rows: auto auto auto 8vh;
+  }
+
+  #menu-mobile,
+  #mobile-cart {
+    display: none;
+  }
+
+  .menuButton,
+  #menu-desktop a {
+    font-size: 1.2rem;
+    margin-right: 4vw;
+    letter-spacing: 0.2vw;
+    cursor: pointer;
+    background-color: white;
+  }
+
+  #menu-mobile a,
+  button {
+    color: #43156e;
+  }
+
+  #menu-desktop i {
+    font-size: 1.6rem;
+    color: #b09fbc;
+  }
+
+  #menu-desktop a:hover {
+    color: #cbc0d3;
+  }
+
+  #title {
+    margin: 2vw 25vw 4vw 25vw;
+    padding: 3vw;
+    letter-spacing: 0.8vw;
+    line-height: 3vw;
   }
 }

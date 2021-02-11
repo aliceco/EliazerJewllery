@@ -1,82 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="./js/main.js"></script>
-    <title>Document</title>
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Eliazer | The finest jewellery</title>
+  </head>
+
+  <body>
     <header>
-        <h1>My Shop</h1>
-        <div id="Menu">
-            <a href="index.html">Home</a>
-            <button id="cart">Cart</button>
-        </div>
+      <h1>Eliazer</h1>
+      <a href="cart.html"
+        ><i class="fa fa-shopping-cart cart" id="mobile-cart"></i
+      ></a>
+      <nav id="menu-desktop">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <button class="openbtn menuButton" onclick="openNav()">Menu</button>
+        <a href="cart.html" class="cart"><i class="fa fa-shopping-cart"></i></a>
+      </nav>
     </header>
+    <nav id="menu-mobile">
+      <a href="index.html">Home</a>
+      <a href="">About us</a>
+      <button class="openbtn menuButton" onclick="openNav()">Menu</button>
+    </nav>
+    <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+      <a href="#">Necklaces</a>
+      <a href="#">Bracelets</a>
+      <a href="#">Rings</a>
+      <a href="#">Earrings</a>
+    </div>
     <article id="title">
-        <h1>Jewellry</h1>
+      <h3>The finest Jewellry</h3>
+      <p>by Eliazer</p>
     </article>
     <main class="container">
-        <article class="products" id="product1">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>Necklace</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product2">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>Earrings</h3>            
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product3">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>product</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product4">
-            <img src="./photos/placeholder.jpg" alt="" width="100%"> 
-            <h3>product</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product5">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>product</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product6">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>product</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product7">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>product</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product8">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>product</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
-        <article class="products" id="product9">
-            <img src="./photos/placeholder.jpg" alt="" width="100%">
-            <h3>product</h3>
-            <p>price</p>
-            <button class="addCart" >Add To Cart</button>
-        </article>
+      <article class="products" id="product1">
+        <img src="./photos/necklace.jpg"  alt="" width="100%" />
+        <div class="product-info">
+          <h4 id="product1-name">The Ebon necklace</h4>
+          <p>Description</p>
+          <p id="product1-price">239 kr</p>
+          <button class="addCart-btn" type="button">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product2">
+        <img src="./photos/necklace.jpg"  alt="" width="100%" />
+        <div class="product-info">
+          <h4>The Judith Ring</h4>
+          <p>Description</p>
+          <p>23 kr</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product3">
+        <img src="./photos/necklace.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product4">
+        <img src="./photos/ring-purple.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product5">
+        <img src="./photos/placeholder.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product6">
+        <img src="./photos/placeholder.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product7">
+        <img src="./photos/placeholder.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product8">
+        <img src="./photos/placeholder.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product9">
+        <img src="./photos/placeholder.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product10">
+        <img src="./photos/placeholder.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
+      <article class="products" id="product11">
+        <img src="./photos/placeholder.jpg" alt="" width="100%" />
+        <div class="product-info">
+          <h4>product</h4>
+          <p>Description</p>
+          <p>price</p>
+          <button class="addCart-btn">Add To Cart</button>
+        </div>
+      </article>
     </main>
     <footer>
-        <p>&copy Alice Cohen 2021</p>
+      <p>&copy Alice Cohen 2021</p>
     </footer>
-</body>
+  </body>
 </html>
