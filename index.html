@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="./js/main.js"></script>
+    <script defer src="./js/main.js"></script>
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
       rel="stylesheet"
@@ -20,19 +20,17 @@
   <body>
     <header>
       <h1>Eliazer</h1>
-      <a href="cart.html"
-        ><i class="fa fa-shopping-cart cart" id="mobile-cart"></i
-      ></a>
+      <a href="cart.html" class=".mobile-cart" id="mobile-cart"><i class="fa fa-shopping-cart cart" ></i> Cart <span id="mobile-span">0</span></a>
       <nav id="menu-desktop">
         <a href="index.html">Home</a>
         <a href="about.html">About us</a>
         <button class="openbtn menuButton" onclick="openNav()">Menu</button>
-        <a href="cart.html" class="cart"><i class="fa fa-shopping-cart"></i></a>
+        <a href="cart.html" class="cart"><i class="fa fa-shopping-cart"></i> Cart <span id="desktop-span">0</span></a>
       </nav>
     </header>
     <nav id="menu-mobile">
       <a href="index.html">Home</a>
-      <a href="">About us</a>
+      <a href="about.html">About us</a>
       <button class="openbtn menuButton" onclick="openNav()">Menu</button>
     </nav>
     <div id="mySidepanel" class="sidepanel">
@@ -52,8 +50,8 @@
         <div class="product-info">
           <h4 id="product1-name">The Ebon necklace</h4>
           <p>Description</p>
-          <p id="product1-price">239 kr</p>
-          <button class="addCart-btn" type="button">Add To Cart</button>
+          <p id="product1-price">259 kr</p>
+          <button class="addCart-btn " type="button">Add To Cart</button>
         </div>
       </article>
       <article class="products" id="product2">
@@ -61,16 +59,16 @@
         <div class="product-info">
           <h4>The Judith Ring</h4>
           <p>Description</p>
-          <p>23 kr</p>
+          <p>345 kr</p>
           <button class="addCart-btn">Add To Cart</button>
         </div>
       </article>
       <article class="products" id="product3">
         <img src="./photos/necklace.jpg" alt="" width="100%" />
         <div class="product-info">
-          <h4>product</h4>
+          <h4>The Alex bracelet</h4>
           <p>Description</p>
-          <p>price</p>
+          <p>160 kr</p>
           <button class="addCart-btn">Add To Cart</button>
         </div>
       </article>

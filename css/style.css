@@ -10,6 +10,10 @@ header {
   align-items: center;
 }
 
+header h1 {
+  letter-spacing: 0.6vw;
+}
+
 header h1,
 a,
 button {
@@ -145,7 +149,7 @@ footer {
   }
 
   #mobile-cart {
-    font-size: 1.8rem;
+    font-size: 1.2rem;
   }
 
   #menu-mobile {
@@ -174,6 +178,7 @@ footer {
   }
 }
 
+/* desktop */
 @media (min-width: 701px) {
   header {
     padding: 3vw;
@@ -200,6 +205,10 @@ footer {
   p,
   button {
     margin-top: 1vw;
+  }
+
+  .products h4 {
+    font-size: 1.6vw;
   }
 
   .product-info {
