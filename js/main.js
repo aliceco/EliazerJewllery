@@ -1,5 +1,9 @@
 "use strict";
 
+//To do: 
+//Work on remove button?
+//fix the images
+
 let carts = document.querySelectorAll(".addCart-btn");
 let cartMobile = document.querySelector(".cartMobile span");
 let cartDesktop = document.querySelector(".cartDesktop span");
@@ -43,7 +47,6 @@ for (let i = 0; i < carts.length; i++) {
     totalCost(products[i]);
   });
 }
-
 
 //when reloading page, the numbers beside cart stays if there's anything in local storage
 function onLoadCartNumbers() {
@@ -102,9 +105,8 @@ function setItems(product) {
 
 //add all the costs together
 function totalCost(product) {
-  //cartCost is the numbers that are inside the cart if there's
-  //already something there
- 
+  //cartCost is the numbers that are inside the cart if there's already something there
+  let cartCost = localStorage.getItem("totalCost");
   if (cartCost != null) {
     cartCost = parseInt(cartCost);
     localStorage.setItem("totalCost", cartCost + product.price);
@@ -115,10 +117,10 @@ function totalCost(product) {
 
 function displayCart() {
   let cartItems = localStorage.getItem("productsInCart");
-  //When u get items from local storage it comes like json with strings around, u want to convert it into javascript objects
+  //JSON.parse - trasnlates from JSON string to javaSript Object
   cartItems = JSON.parse(cartItems);
   let productContainer = document.querySelector(".shoppingCart-products");
-  let cartCost = localStorage.getItem("totalCost"); 
+  let cartCost = localStorage.getItem("totalCost");
   if (cartItems && productContainer) {
     productContainer.innetHTML = "";
     Object.values(cartItems).map((item) => {
@@ -146,19 +148,22 @@ function displayCart() {
     `;
   }
 }
-
+//ain't doing shit atm
 function removeButton() {
-  let removeButton = document.querySelectorAll("remove-btn");
-  removeButton.addEventListener("click", () => {
-    console.log("Button clicked");
-  } );
+  let removeButton = document.querySelectorAll(".remove-btn");
+  removeButton = addEventListener("click", () => {
+    console.log("click");
+    removeItem();
+  });
 }
 
-
-
+function removeItem() {
+  let cartItems = localStorage.getItem("productsInCart");
+  cartItems = JSON.parse(cartItems);
+  localStorage.removeItem(cartItems);
+}
 
 //checks if there's something in the storage
 onLoadCartNumbers();
 displayCart();
-
-
+removeButton();
