@@ -6,7 +6,7 @@ let cartDesktop = document.querySelector(".cartDesktop span");
 
 //array
 let products = [
-  //product information ?
+  //product information
   {
     name: "The Ebon necklace",
     tag: "ebon",
@@ -44,12 +44,13 @@ for (let i = 0; i < carts.length; i++) {
   });
 }
 
+
 //when reloading page, the numbers beside cart stays if there's anything in local storage
 function onLoadCartNumbers() {
   let productNumbers = localStorage.getItem("cartNumbers");
   if (productNumbers) {
-    cartDesktop.textContent = productNumbers;
-    cartMobile.textContent = productNumbers;
+    cartDesktop.innerHTML = productNumbers;
+    cartMobile.innerHTML = productNumbers;
   }
 }
 
@@ -103,14 +104,61 @@ function setItems(product) {
 function totalCost(product) {
   //cartCost is the numbers that are inside the cart if there's
   //already something there
-  let cartCost = localStorage.getItem("totalCost");
+ 
   if (cartCost != null) {
     cartCost = parseInt(cartCost);
     localStorage.setItem("totalCost", cartCost + product.price);
   } else {
-    localStorage.setItem("totalCost", product.price)
+    localStorage.setItem("totalCost", product.price);
   }
 }
 
+function displayCart() {
+  let cartItems = localStorage.getItem("productsInCart");
+  //When u get items from local storage it comes like json with strings around, u want to convert it into javascript objects
+  cartItems = JSON.parse(cartItems);
+  let productContainer = document.querySelector(".shoppingCart-products");
+  let cartCost = localStorage.getItem("totalCost"); 
+  if (cartItems && productContainer) {
+    productContainer.innetHTML = "";
+    Object.values(cartItems).map((item) => {
+      productContainer.innerHTML += `
+      <div class = "product">
+      <ion-icon class="remove-btn" name="close-outline"></ion-icon>
+        <img src="./photos/${item.tag}.jpg">
+        <span>${item.name}</span>
+      </div>
+      <div class="quantity">
+      <ion-icon class="add-remove" name="remove-circle"></ion-icon>
+      <span>${item.inCart}</span>
+      <ion-icon class="add-remove"name="add-circle"></ion-icon>
+      </div>
+      <div class="price">${item.price} kr</div>
+      <div class="total">${item.inCart * item.price} kr</div>
+      `;
+    });
+
+    productContainer.innerHTML += `
+      <div class="totalPriceContainer">
+        <h4 class="totalPriceTitle">Total Price:</h4>
+        <h4 class="totalPrice">${cartCost} kr</h4>
+        </div>
+    `;
+  }
+}
+
+function removeButton() {
+  let removeButton = document.querySelectorAll("remove-btn");
+  removeButton.addEventListener("click", () => {
+    console.log("Button clicked");
+  } );
+}
+
+
+
+
 //checks if there's something in the storage
 onLoadCartNumbers();
+displayCart();
+
+

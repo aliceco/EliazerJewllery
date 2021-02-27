@@ -1,59 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/style.css" />
     <script defer src="./js/main.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Document</title>
-</head>
-<body>
-  <header>
-    <h1>Eliazer</h1>
-    <a href="cart.html" class="cart" id="mobile-cart"><i class="fa fa-shopping-cart cart" ></i> Cart <span>0</span></a>
-    <nav id="menu-desktop">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>Shopping Cart | Eliazer</title>
+  </head>
+  <body>
+    <header>
+      <h1>Eliazer</h1>
+      <a href="cart.html" class="cartMobile" id="mobile-cart"
+        ><i class="fa fa-shopping-cart cart"></i> Cart <span>0</span></a
+      >
+      <nav id="menu-desktop">
+        <a href="index.html">Home</a>
+        <a href="about.html">About us</a>
+        <button class="openbtn menuButton" onclick="openNav()">Menu</button>
+        <a href="cart.html" class="cartDesktop"
+          ><i class="fa fa-shopping-cart"></i> Cart <span>0</span></a
+        >
+      </nav>
+    </header>
+    <nav id="menu-mobile">
       <a href="index.html">Home</a>
       <a href="about.html">About us</a>
       <button class="openbtn menuButton" onclick="openNav()">Menu</button>
-      <a href="cart.html" class="cart"><i class="fa fa-shopping-cart"></i> Cart <span>0</span></a>
     </nav>
-  </header>
-  <nav id="menu-mobile">
-      <a href="index.html">Home</a>
-      <a href="about.html">About us</a>
-      <button class="openbtn menuButton" onclick="openNav()">Menu</button>
-  </nav>
-  <nav id="mySidepanel" class="sidepanel">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
-    <a href="#">Necklaces</a>
-    <a href="#">Bracelets</a>
-    <a href="#">Rings</a>
-    <a href="#">Earrings</a>
-  </nav>
-  <main>
-    <article id="title">
-      <h3>Shopping Cart</h3>
-    </article>
-    <article>
-      <p>Product</p>
-      <p>Price</p>
-      <p>Quantity</p>
-      <p>TOTAL</p>
+    <nav id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">x</a>
+      <a href="#">Necklaces</a>
+      <a href="#">Bracelets</a>
+      <a href="#">Rings</a>
+      <a href="#">Earrings</a>
+    </nav>
+    <main>
+      <article id="title">
+        <h3>Shopping Cart</h3>
+      </article>
 
-    </article>
+      <article class="shoppingCart">
+        <h3 id="orderSummary">Order Summary</h3>
+        <div class="product-container">
+          <div class="product-header">
+            <p id="product-title">Product</p>
+            <p id="quantity-title">Quantity</p>
+            <p id="price-title">Price</p>
+            <p id="total-title">TOTAL</p>
+          </div>
+        </div>
+        <div class="shoppingCart-products"></div>
+      </article>
+    </main>
 
-
-
-  </main>
-
-
-
-
-  <footer>
-    <p>&copy Alice Cohen 2021</p>
-  </footer>
-</body>
+    <footer>
+      <p>&copy Alice Cohen 2021</p>
+    </footer>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+  </body>
 </html>
