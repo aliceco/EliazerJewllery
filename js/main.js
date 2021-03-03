@@ -1,32 +1,51 @@
 "use strict";
 
-//To do: 
-//Work on remove button?
-//fix the images
-
 let carts = document.querySelectorAll(".addCart-btn");
 let cartMobile = document.querySelector(".cartMobile span");
 let cartDesktop = document.querySelector(".cartDesktop span");
 
-//array
+//array with products information
 let products = [
-  //product information
   {
     name: "The Ebon necklace",
     tag: "ebon",
-    price: 259,
+    price: 689,
     inCart: 0,
   },
   {
     name: "The Judith ring",
     tag: "judith",
-    price: 345,
+    price: 999,
     inCart: 0,
   },
   {
     name: "The Alex bracelet",
     tag: "alex",
-    price: 160,
+    price: 650,
+    inCart: 0,
+  },
+  {
+    name: "The Tindra earrings",
+    tag: "tindra",
+    price: 450,
+    inCart: 0,
+  },
+  {
+    name: "The Mia ring",
+    tag: "mia",
+    price: 390,
+    inCart: 0,
+  },
+  {
+    name: "The Kim necklace",
+    tag: "kim",
+    price: 399,
+    inCart: 0,
+  },
+  {
+    name: "The Nicole earrings",
+    tag: "nicole",
+    price: 439,
     inCart: 0,
   },
 ];
@@ -40,7 +59,7 @@ function closeNav() {
   document.getElementById("mySidepanel").style.width = "0";
 }
 
-//makes the buttons work
+//Goes through add to cart buttons, executing following functions
 for (let i = 0; i < carts.length; i++) {
   carts[i].addEventListener("click", () => {
     cartNumbers(products[i]);
@@ -60,14 +79,11 @@ function onLoadCartNumbers() {
 //function to know how many items are added to cart
 function cartNumbers(product) {
   let productNumbers = localStorage.getItem("cartNumbers");
-
-  //convert string to int
   productNumbers = parseInt(productNumbers);
 
-  //if theres already something in local storage - add a number, else start from 1
+  //updates the number beside the cart
   if (productNumbers) {
     localStorage.setItem("cartNumbers", productNumbers + 1);
-    //updates the number beside the cart
     cartMobile.innerText = productNumbers + 1;
     cartDesktop.innerText = productNumbers + 1;
   } else {
@@ -75,16 +91,15 @@ function cartNumbers(product) {
     cartDesktop.innerText = 1;
     cartMobile.innerText = 1;
   }
-  setItems(product);
+  saveCart(product);
 }
 
-//adds all the product information into local storage?
-function setItems(product) {
+//adds all the product information into local storage
+function saveCart(product) {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
   if (cartItems != null) {
-    //if this is undefined i want to update my cartItems to whatever is in loicalo storage and update cartItems
     if (cartItems[product.tag] == undefined) {
       cartItems = {
         //all elements of the objest is called with ...
@@ -100,18 +115,18 @@ function setItems(product) {
     };
   }
 
-  localStorage.setItem("productsInCart", JSON.stringify(cartItems));
+  localStorage.saveCart("productsInCart", JSON.stringify(cartItems));
 }
 
-//add all the costs together
+//adds all the costs together
 function totalCost(product) {
   //cartCost is the numbers that are inside the cart if there's already something there
   let cartCost = localStorage.getItem("totalCost");
   if (cartCost != null) {
     cartCost = parseInt(cartCost);
-    localStorage.setItem("totalCost", cartCost + product.price);
+    localStorage.saveCart("totalCost", cartCost + product.price);
   } else {
-    localStorage.setItem("totalCost", product.price);
+    localStorage.saveCart("totalCost", product.price);
   }
 }
 
@@ -130,9 +145,11 @@ function displayCart() {
         <img src="./photos/${item.tag}.jpg">
         <span>${item.name}</span>
       </div>
-      <div class="quantity">
+
+      <div class="quantity">      
       <ion-icon class="add-remove" name="remove-circle"></ion-icon>
       <span>${item.inCart}</span>
+
       <ion-icon class="add-remove"name="add-circle"></ion-icon>
       </div>
       <div class="price">${item.price} kr</div>
@@ -148,22 +165,7 @@ function displayCart() {
     `;
   }
 }
-//ain't doing shit atm
-function removeButton() {
-  let removeButton = document.querySelectorAll(".remove-btn");
-  removeButton = addEventListener("click", () => {
-    console.log("click");
-    removeItem();
-  });
-}
-
-function removeItem() {
-  let cartItems = localStorage.getItem("productsInCart");
-  cartItems = JSON.parse(cartItems);
-  localStorage.removeItem(cartItems);
-}
 
 //checks if there's something in the storage
 onLoadCartNumbers();
 displayCart();
-removeButton();

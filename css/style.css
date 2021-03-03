@@ -59,7 +59,8 @@ footer {
 }
 
 /* where the products are shown */
-.container , .shoppingCart-products{
+.container,
+.shoppingCart-products {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
@@ -106,8 +107,6 @@ footer {
   flex-direction: row;
   border-bottom: 0.2vw solid #cbc0d3;
 }
-
-
 
 /* --------- MOBILE ----------- */
 
@@ -194,8 +193,6 @@ footer {
     margin: 2vw;
     border-style: solid;
   }
-
-
 }
 
 /* --------- DESKTOP  ----------- */
@@ -272,7 +269,6 @@ footer {
     line-height: 3vw;
   }
 
- 
   /* --------- CART ----------- */
 
   .shoppingCart {
@@ -293,7 +289,7 @@ footer {
     font-size: 1.5rem;
     cursor: pointer;
   }
-  
+
   .product {
     width: 45%;
     display: flex;
@@ -359,6 +355,4 @@ footer {
     text-align: end;
     margin-right: 1vw;
   }
-
-
 }
