@@ -108,6 +108,97 @@ footer {
   border-bottom: 0.2vw solid #cbc0d3;
 }
 
+.shoppingCart-products {
+  align-items: center;
+  border-bottom: 0.2vw solid #cbc0d3;
+}
+
+.shoppingCart-products img {
+  max-width: 10vw;
+  margin-left: 1vw;
+}
+
+.shoppingCart-products ion-icon {
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.product {
+  width: 45%;
+  display: flex;
+  align-items: center;
+}
+
+.quantity {
+  width: 15%;
+  display: flex;
+  justify-content: space-around;
+  margin-left: 6vw;
+  margin-right: 3vw;
+}
+
+.add-remove {
+  color: #cbc0d3;
+}
+
+.price {
+  width: 10%;
+  text-align: center;
+}
+
+.total {
+  width: 15%;
+  text-align: end;
+}
+
+.totalPriceContainer {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 1vw;
+  padding: 3vw 0 1vw 0;
+  font-size: 1.2rem;
+}
+
+.totalPriceTitle {
+  width: 20%;
+}
+
+#orderSummary {
+  margin-bottom: 2vh;
+}
+
+#product-title {
+  margin-left: 1vw;
+  width: 50%;
+}
+
+#quantity-title {
+  width: 25%;
+  text-align: center;
+}
+
+#price-title {
+  width: 10%;
+  text-align: center;
+}
+
+#total-title {
+  width: 15%;
+  text-align: end;
+  margin-right: 1vw;
+}
+
+/* --------- About us page ----------- */
+
+#about-us {
+  text-align: center;
+  font-style: italic;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  padding: 8vw;
+}
+
 /* --------- MOBILE ----------- */
 
 @media (max-width: 700px) {
@@ -187,11 +278,33 @@ footer {
     border-color: #cbc0d3;
   }
 
-  /* --------- CART ----------- */
+  /* --------- MOBILE CART ----------- */
 
   .shoppingCart {
-    margin: 2vw;
-    border-style: solid;
+    margin: 5vw 10vw 10vw 10vw;
+  }
+
+  .product-header {
+    font-size: 3.8vw;
+  }
+
+  .cart-text {
+    font-size: 3.5vw;
+  }
+
+  #product-title,
+  #quantity-title,
+  #price-title,
+  #total-title {
+    margin-top: 2vh;
+  }
+
+  .totalPriceTitle {
+    width: 40%;
+  }
+
+  .shoppingCart-products ion-icon {
+    font-size: 1rem;
   }
 }
 
@@ -269,90 +382,9 @@ footer {
     line-height: 3vw;
   }
 
-  /* --------- CART ----------- */
+  /* --------- DESKTOP CART ----------- */
 
   .shoppingCart {
     margin: 0 14vw 10vw 14vw;
-  }
-
-  .shoppingCart-products {
-    align-items: center;
-    border-bottom: 0.2vw solid #cbc0d3;
-  }
-
-  .shoppingCart-products img {
-    max-width: 10vw;
-    margin-left: 1vw;
-  }
-
-  .shoppingCart-products ion-icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-
-  .product {
-    width: 45%;
-    display: flex;
-    align-items: center;
-  }
-
-  .quantity {
-    width: 15%;
-    display: flex;
-    justify-content: space-around;
-    margin-left: 6vw;
-    margin-right: 3vw;
-  }
-
-  .add-remove {
-    color: #cbc0d3;
-  }
-
-  .price {
-    width: 10%;
-    text-align: center;
-  }
-
-  .total {
-    width: 15%;
-    text-align: end;
-  }
-
-  .totalPriceContainer {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end;
-    margin-right: 1vw;
-    padding: 3vw 0 1vw 0;
-    font-size: 1.2rem;
-  }
-
-  .totalPriceTitle {
-    width: 20%;
-  }
-
-  #orderSummary {
-    margin-bottom: 2vh;
-  }
-
-  #product-title {
-    margin-left: 1vw;
-    width: 50%;
-  }
-
-  #quantity-title {
-    width: 25%;
-    text-align: center;
-  }
-
-  #price-title {
-    width: 10%;
-    text-align: center;
-  }
-
-  #total-title {
-    width: 15%;
-    text-align: end;
-    margin-right: 1vw;
   }
 }

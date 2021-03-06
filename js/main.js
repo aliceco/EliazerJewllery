@@ -91,11 +91,11 @@ function cartNumbers(product) {
     cartDesktop.innerText = 1;
     cartMobile.innerText = 1;
   }
-  saveCart(product);
+  setItem(product);
 }
 
 //adds all the product information into local storage
-function saveCart(product) {
+function setItem(product) {
   let cartItems = localStorage.getItem("productsInCart");
   cartItems = JSON.parse(cartItems);
 
@@ -115,7 +115,7 @@ function saveCart(product) {
     };
   }
 
-  localStorage.saveCart("productsInCart", JSON.stringify(cartItems));
+  localStorage.setItem("productsInCart", JSON.stringify(cartItems));
 }
 
 //adds all the costs together
@@ -124,9 +124,9 @@ function totalCost(product) {
   let cartCost = localStorage.getItem("totalCost");
   if (cartCost != null) {
     cartCost = parseInt(cartCost);
-    localStorage.saveCart("totalCost", cartCost + product.price);
+    localStorage.setItem("totalCost", cartCost + product.price);
   } else {
-    localStorage.saveCart("totalCost", product.price);
+    localStorage.setItem("totalCost", product.price);
   }
 }
 
@@ -141,19 +141,19 @@ function displayCart() {
     Object.values(cartItems).map((item) => {
       productContainer.innerHTML += `
       <div class = "product">
-      <ion-icon class="remove-btn" name="close-outline"></ion-icon>
+      <ion-icon onclick=removeProduct() class="remove-btn" name="close-outline"></ion-icon>
         <img src="./photos/${item.tag}.jpg">
-        <span>${item.name}</span>
+        <span  class="cart-text">${item.name}</span>
       </div>
 
       <div class="quantity">      
-      <ion-icon class="add-remove" name="remove-circle"></ion-icon>
-      <span>${item.inCart}</span>
+      <ion-icon onclick=decreaseQuantity() class="add-remove decrease-btn" name="remove-circle"></ion-icon>
+      <span class="cart-text">${item.inCart}</span>
 
-      <ion-icon class="add-remove"name="add-circle"></ion-icon>
+      <ion-icon onclick=increaseQuantity() class="add-remove"name="add-circle"></ion-icon>
       </div>
-      <div class="price">${item.price} kr</div>
-      <div class="total">${item.inCart * item.price} kr</div>
+      <div class="price cart-text" >${item.price} kr</div>
+      <div class="total cart-text">${item.inCart * item.price} kr</div>
       `;
     });
 
@@ -166,6 +166,21 @@ function displayCart() {
   }
 }
 
-//checks if there's something in the storage
+//functions do not change anything in local storage  or in displayCart()
+function removeProduct() {
+  console.log("The remove product button is clicked");
+  console.log("Disclaimer: The button does not work");
+}
+
+function decreaseQuantity() {
+  console.log("The decrease quantity button is clicked");
+  console.log("Disclaimer: The button does not work");
+}
+
+function increaseQuantity() {
+  console.log("The increase quantity button is clicked");
+  console.log("Disclaimer: The button does not work");
+}
+
 onLoadCartNumbers();
 displayCart();
