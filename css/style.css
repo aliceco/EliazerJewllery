@@ -52,6 +52,10 @@ footer {
   transition: 0.3s;
 }
 
+.sidepanel a:hover {
+  color: #765991;
+}
+
 .sidepanel .closebtn {
   position: absolute;
   top: 2vw;
