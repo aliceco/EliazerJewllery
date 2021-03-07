@@ -24,6 +24,8 @@ button {
 footer {
   background-color: #cbc0d3;
   text-align: center;
+  letter-spacing: 0.1vw;
+  font-size: 0.8rem;
 }
 
 .sidepanel {
@@ -73,7 +75,8 @@ footer {
 }
 
 /* costumize the add to cart button */
-.addCart-btn {
+.addCart-btn,
+#checkout-btn {
   text-decoration: none;
   border: none;
   background-color: #cbc0d3;
@@ -81,7 +84,8 @@ footer {
   cursor: pointer;
 }
 
-.addCart-btn:hover {
+.addCart-btn:hover,
+#checkout-btn:hover {
   background-color: #e1dbe6;
 }
 
@@ -90,14 +94,24 @@ footer {
   border: none;
 }
 
-#title {
+.title {
   text-align: center;
   border-style: solid;
   border-color: #cbc0d3;
 }
 
-#title p {
+.title p {
   font-style: italic;
+}
+
+/* --------- ABOUT US ----------- */
+
+.about {
+  text-align: center;
+  font-style: italic;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
+  letter-spacing: 0.1vw;
 }
 
 /* --------- CART ----------- */
@@ -189,16 +203,6 @@ footer {
   margin-right: 1vw;
 }
 
-/* --------- About us page ----------- */
-
-#about-us {
-  text-align: center;
-  font-style: italic;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
-  padding: 8vw;
-}
-
 /* --------- MOBILE ----------- */
 
 @media (max-width: 700px) {
@@ -209,6 +213,16 @@ footer {
 
   header h1 {
     font-size: 2.6rem;
+  }
+
+  .title {
+    margin: 4vw 10vw 4vw 10vw;
+    padding: 6vw;
+    text-align: center;
+    letter-spacing: 0.8vw;
+    line-height: 8vw;
+    border-style: solid;
+    border-color: #cbc0d3;
   }
 
   .menuButton {
@@ -268,14 +282,11 @@ footer {
     color: #43156e;
   }
 
-  #title {
-    margin: 4vw 10vw 4vw 10vw;
-    padding: 6vw;
-    text-align: center;
-    letter-spacing: 0.8vw;
-    line-height: 8vw;
-    border-style: solid;
-    border-color: #cbc0d3;
+  /* --------- MOBILE ABOUT US ----------- */
+
+  .about {
+    font-size: 0.9rem;
+    padding: 8vw;
   }
 
   /* --------- MOBILE CART ----------- */
@@ -292,6 +303,14 @@ footer {
     font-size: 3.5vw;
   }
 
+  .totalPriceTitle {
+    width: 40%;
+  }
+
+  .shoppingCart-products ion-icon {
+    font-size: 1rem;
+  }
+
   #product-title,
   #quantity-title,
   #price-title,
@@ -299,12 +318,10 @@ footer {
     margin-top: 2vh;
   }
 
-  .totalPriceTitle {
-    width: 40%;
-  }
-
-  .shoppingCart-products ion-icon {
-    font-size: 1rem;
+  #checkout-btn {
+    width: 100%;
+    margin-top: 2vh;
+    padding: 3vw;
   }
 }
 
@@ -321,6 +338,13 @@ footer {
 
   footer {
     padding: 4vw;
+  }
+
+  .title {
+    margin: 2vw 25vw 4vw 25vw;
+    padding: 3vw;
+    letter-spacing: 0.8vw;
+    line-height: 3vw;
   }
 
   .menuButton:hover {
@@ -375,16 +399,22 @@ footer {
     color: #cbc0d3;
   }
 
-  #title {
-    margin: 2vw 25vw 4vw 25vw;
-    padding: 3vw;
-    letter-spacing: 0.8vw;
-    line-height: 3vw;
+  /* --------- DESKTOP ABOUT US ----------- */
+  .about {
+    margin-top: -2vw;
+    padding: 5vw;
   }
-
   /* --------- DESKTOP CART ----------- */
 
   .shoppingCart {
     margin: 0 14vw 10vw 14vw;
+  }
+
+  #checkout-btn {
+    width: 100%;
+    height: 9vh;
+    font-size: 1.2rem;
+    margin-top: 4vh;
+    justify-content: end;
   }
 }

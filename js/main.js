@@ -169,17 +169,21 @@ function displayCart() {
 //functions do not change anything in local storage  or in displayCart()
 function removeProduct() {
   console.log("The remove product button is clicked");
-  console.log("Disclaimer: The button does not work");
+  console.log("Disclaimer: The button has no function");
 }
 
 function decreaseQuantity() {
   console.log("The decrease quantity button is clicked");
-  console.log("Disclaimer: The button does not work");
+  console.log("Disclaimer: The button has no function");
 }
 
 function increaseQuantity() {
   console.log("The increase quantity button is clicked");
-  console.log("Disclaimer: The button does not work");
+  console.log("Disclaimer: The button has no function");
+}
+
+function checkOut() {
+  alert("Moving to checkout");
 }
 
 onLoadCartNumbers();
